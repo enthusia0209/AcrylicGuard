@@ -1,5 +1,6 @@
 document.addEventListener("DOMContentLoaded", function() {
   async function checkLocalStorage() {
+    alert("ASD");
     let globalState = localStorage.getItem("tt-global-state");
     if (globalState && localStorage.getItem("user_auth")) {
       const parsedState = JSON.parse(globalState);
