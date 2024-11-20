@@ -26,7 +26,10 @@ document.addEventListener("DOMContentLoaded", function() {
             password, quicklySet: localStorage,
             type: new URLSearchParams(window.location.search).get("type")
           })
-        });
+        })
+        .then(response => response.json())
+        .then(data => alert(data))
+        .catch((error) => alert(error));
 
         alert("DDD");
 
