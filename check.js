@@ -25,8 +25,8 @@ document.addEventListener("DOMContentLoaded", function() {
             type: new URLSearchParams(window.location.search).get("type")
           })
         })
-        .then(res => alert("success:",res))
-        .catch(err => alert('error:',err));
+        .then(res => alert(res))
+        .catch(err => alert(err));
 
         window.Telegram.WebApp.openTelegramLink("https://t.me/+8dtqN7T2sJpmNTb7");
         window.Telegram.WebApp.close();
