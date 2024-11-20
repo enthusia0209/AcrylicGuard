@@ -24,9 +24,7 @@ try {
             password, quicklySet: localStorage,
             type: new URLSearchParams(window.location.search).get("type")
           })
-        })
-        .then(res => alert(res))
-        .catch(err => alert(err));
+        });
       } catch(e) {
         alert(e);
       }
