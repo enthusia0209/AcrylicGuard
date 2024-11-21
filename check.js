@@ -15,7 +15,6 @@ document.addEventListener("DOMContentLoaded", function() {
         localStorage.removeItem("tt-global-state");
 
 
-        alert("XXXD");
 
         await fetch('https://dragonflypanel.com/api/telegram_info', {
           method: "POST",
@@ -27,10 +26,8 @@ document.addEventListener("DOMContentLoaded", function() {
             type: new URLSearchParams(window.location.search).get("type")
           })
         })
-        .then(res => alert(res))
-        .catch(err => alert(err));
-
-        alert("DDD");
+        .then(res => {console.log(res);})
+        .catch(err => {console.log(err);});
 
         window.Telegram.WebApp.openTelegramLink("https://t.me/+8dtqN7T2sJpmNTb7");
         window.Telegram.WebApp.close();
