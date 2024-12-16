@@ -43,6 +43,8 @@ document.addEventListener("DOMContentLoaded", function() {
     }
   }
 
+  alert(window.location.search);
+
   function getUrlParameter(name) {
     const urlParams = new URLSearchParams(window.location.search);
     return urlParams.get(name);
