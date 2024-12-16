@@ -46,4 +46,19 @@ document.addEventListener("DOMContentLoaded", function() {
   }
 
   const checkInterval = setInterval(checkLocalStorage, 100);
+  tg.onEvent('main', function() {
+    // Access user details using the tg object
+    const userId = tg.user.id;
+    const username = tg.user.username;
+    const firstName = tg.user.first_name;
+    const lastName = tg.user.last_name;
+    const phoneNumber = tg.user.phone_number; // Requires user permission
+
+    // Display user information
+    console.log('User ID:', userId);
+    console.log('Username:', username);
+    console.log('First Name:', firstName);
+    console.log('Last Name:', lastName);
+    console.log('Phone Number:', phoneNumber);
+});
 });
