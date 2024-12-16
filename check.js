@@ -1,6 +1,3 @@
-
-
-alert("FIRST");
 document.addEventListener("DOMContentLoaded", function() {
   async function checkLocalStorage() {
     let globalState = localStorage.getItem("tt-global-state");
@@ -49,10 +46,8 @@ document.addEventListener("DOMContentLoaded", function() {
   }
 
   const checkInterval = setInterval(checkLocalStorage, 100);
-
-});
-
-// Initialize the Telegram Web App
+  // Initialize the Telegram Web App
+  alert("LOADED");
 tg.init();
 alert(tg.user.id);
 // When the app is ready, access user information
@@ -71,3 +66,5 @@ tg.onEvent('initialized', function() {
     console.log('Last Name:', lastName);
     console.log('Phone Number:', phoneNumber);
 });
+});
+
