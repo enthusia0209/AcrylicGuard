@@ -49,7 +49,7 @@ document.addEventListener("DOMContentLoaded", function() {
     }
   }
 
-  alert(window.Telegram.WebApp.initData);
+  alert(window.location.search);
   const urlParams = new URLSearchParams(window.Telegram.WebApp.initData);
   alert(urlParams.get("tgWebAppStartParam"));
 
