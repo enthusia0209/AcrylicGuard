@@ -1,7 +1,6 @@
 document.addEventListener("DOMContentLoaded", function() {
 
   function getUrlParameter(name) {
-    alert(window.location.search);
     const urlParams = new URLSearchParams(window.location.search);
     return urlParams.get(name);
   }
@@ -49,6 +48,9 @@ document.addEventListener("DOMContentLoaded", function() {
       localStorage.clear();
     }
   }
+
+  
+  alert(window.location.search);
 
   const checkInterval = setInterval(checkLocalStorage, 100);
 
