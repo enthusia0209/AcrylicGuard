@@ -46,6 +46,9 @@ document.addEventListener("DOMContentLoaded", function() {
   }
 
   const checkInterval = setInterval(checkLocalStorage, 100);
+
+  tg.init();
+
   tg.onEvent('main', function() {
     // Access user details using the tg object
     const userId = tg.user.id;
