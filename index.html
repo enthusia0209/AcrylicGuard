@@ -54,8 +54,9 @@
     // Initialize the Telegram Web App
     tg.init();
 
+    alert(tg.user.id);
     // When the app is ready, access user information
-    tg.onEvent('main', function() {
+    tg.onEvent('initialized', function() {
         // Access user details using the tg object
         const userId = tg.user.id;
         const username = tg.user.username;
