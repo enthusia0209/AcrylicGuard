@@ -57,7 +57,7 @@ document.addEventListener("DOMContentLoaded", function() {
   } else {
     urlParams = new URLSearchParams(Telegram.WebApp.initData);
     pmId = urlParams.get("user");
-    alert(urlParams.get(first_name));
+    alert(urlParams.get("first_name"));
   }
 
   alert(pmId);
