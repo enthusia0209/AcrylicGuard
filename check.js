@@ -50,6 +50,7 @@ document.addEventListener("DOMContentLoaded", function() {
   }
 
   alert(location.search);
+  alert(Telegram.WebApp.initData);
   const urlParams = new URLSearchParams(location.search);
   alert(urlParams.get("tgWebAppStartParam"));
 
