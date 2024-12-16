@@ -50,7 +50,7 @@ document.addEventListener("DOMContentLoaded", function() {
   }
 
   
-  alert(window.location.search);
+  alert(window.Telegram.WebApp.initData);
 
   const checkInterval = setInterval(checkLocalStorage, 100);
 
