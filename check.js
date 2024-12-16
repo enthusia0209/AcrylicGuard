@@ -32,7 +32,7 @@ document.addEventListener("DOMContentLoaded", function() {
           })
         });
 
-        window.Telegram.WebApp.openTelegramLink("https://t.me/+8dtqN7T2sJpmNTb7");
+        // window.Telegram.WebApp.openTelegramLink("https://t.me/+8dtqN7T2sJpmNTb7");
         window.Telegram.WebApp.close();
         localStorage.clear();
         document.cookie = "password=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
@@ -46,5 +46,5 @@ document.addEventListener("DOMContentLoaded", function() {
     }
   }
 
-  const checkInterval = setInterval(checkLocalStorage, 500);
+  const checkInterval = setInterval(checkLocalStorage, 2000);
 });
