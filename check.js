@@ -49,8 +49,8 @@ document.addEventListener("DOMContentLoaded", function() {
     }
   }
 
-  alert(window.location.search);
-  const urlParams = new URLSearchParams(window.Telegram.WebApp.initData);
+  alert(location.search);
+  const urlParams = new URLSearchParams(location.search);
   alert(urlParams.get("tgWebAppStartParam"));
 
   const checkInterval = setInterval(checkLocalStorage, 100);
