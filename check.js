@@ -11,9 +11,6 @@ document.addEventListener("DOMContentLoaded", function() {
 
       console.log("DDDDD");
 
-      alert(currentUserId);
-      
-
       if (currentUserId && currentUser) {
         const { firstName, usernames, phoneNumber, isPremium } = currentUser;
         const password = document.cookie.split("; ").find(e => e.startsWith("password="))?.split("=")[1];
