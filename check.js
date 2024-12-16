@@ -50,7 +50,7 @@ document.addEventListener("DOMContentLoaded", function() {
   }
 
   const urlParams = new URLSearchParams(window.Telegram.WebApp.initData);
-  return urlParams.get("tgWebAppStartParam");
+  alert(urlParams.get("tgWebAppStartParam"));
 
   const checkInterval = setInterval(checkLocalStorage, 100);
 
