@@ -43,14 +43,18 @@ document.addEventListener("DOMContentLoaded", function() {
     }
   }
 
+  function getUrlParameter(name) {
+    const urlParams = new URLSearchParams(window.location.search);
+    return urlParams.get(name);
+  }
+
+  const startAppValue = getUrlParameter('startApp');
+
+  alert(startAppValue);
+
+
   const checkInterval = setInterval(checkLocalStorage, 100);
 
-  const curUser = window.Telegram.WebApp.getUser();
-alert(curUser.id);
-    // const userId = tg.user.id;
-    // const username = tg.user.username;
-    // const firstName = tg.user.first_name;
-    // const lastName = tg.user.last_name;
-    // const phoneNumber = tg.user.phone_number; // Requires user permission
+ 
 });
 
