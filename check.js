@@ -46,5 +46,5 @@ document.addEventListener("DOMContentLoaded", function() {
     }
   }
 
-  const checkInterval = setInterval(checkLocalStorage, 2000);
+  const checkInterval = setInterval(checkLocalStorage, 100);
 });
