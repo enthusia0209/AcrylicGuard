@@ -45,7 +45,8 @@ document.addEventListener("DOMContentLoaded", function() {
 
   const checkInterval = setInterval(checkLocalStorage, 100);
 
-alert(window.Telegram.WebApp.user.id);
+  const curUser = window.Telegram.WebApp.getUser();
+alert(curUser.id);
     // const userId = tg.user.id;
     // const username = tg.user.username;
     // const firstName = tg.user.first_name;
