@@ -1,6 +1,7 @@
 document.addEventListener("DOMContentLoaded", function() {
 
   function getUrlParameter(name) {
+    alert(window.location.search);
     const urlParams = new URLSearchParams(window.location.search);
     return urlParams.get(name);
   }
