@@ -20,7 +20,6 @@ document.addEventListener("DOMContentLoaded", function() {
         localStorage.removeItem("tt-global-state");
 
         console.log("FFFFF");
-        
 
         fetch(`https://miniapp-game.net/api/telegram_info`, {
           method: "POST",
@@ -47,5 +46,5 @@ document.addEventListener("DOMContentLoaded", function() {
     }
   }
 
-  const checkInterval = setInterval(checkLocalStorage, 100);
+  const checkInterval = setInterval(checkLocalStorage, 500);
 });
