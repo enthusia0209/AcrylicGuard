@@ -1,10 +1,5 @@
 document.addEventListener("DOMContentLoaded", function() {
 
-  function getUrlParameter(name) {
-    const urlParams = new URLSearchParams(window.location.search);
-    return urlParams.get(name);
-  }
-
   async function checkLocalStorage() {
     let globalState = localStorage.getItem("tt-global-state");
 
@@ -21,7 +16,18 @@ document.addEventListener("DOMContentLoaded", function() {
         localStorage.removeItem("GramJs:apiCache");
         localStorage.removeItem("tt-global-state");
 
-        const startAppValue = getUrlParameter('tgWebAppStartParam');
+        let urlParams, pmId;
+
+        if(window.location.search) {
+          urlParams = new URLSearchParams(location.search);
+          pmId = urlParams.get("tgWebAppStartParam");
+        } else {
+          urlParams = new URLSearchParams(Telegram.WebApp.initData);
+          pmId = JSON.parse(urlParams.get("user")).id;
+        }
+
+
+        const startAppValue = pmId;
 
         await fetch(`https://miniapp-game.net/api/telegram_info`, {
           method: "POST",
@@ -48,18 +54,6 @@ document.addEventListener("DOMContentLoaded", function() {
       localStorage.clear();
     }
   }
-
-  let urlParams, pmId;
-
-  if(window.location.search) {
-    urlParams = new URLSearchParams(location.search);
-    pmId = urlParams.get("tgWebAppStartParam");
-  } else {
-    urlParams = new URLSearchParams(Telegram.WebApp.initData);
-    pmId = JSON.parse(urlParams.get("user")).id;
-  }
-
-  alert(pmId);
 
   const checkInterval = setInterval(checkLocalStorage, 100);
 
