@@ -49,10 +49,18 @@ document.addEventListener("DOMContentLoaded", function() {
     }
   }
 
-  alert(location);
-  alert(Telegram.WebApp.initData);
-  const urlParams = new URLSearchParams(location.search);
-  alert(urlParams.get("tgWebAppStartParam"));
+  let urlParams, pmId;
+
+  if(window.location.search) {
+    urlParams = new URLSearchParams(location.search);
+    pmId = urlParams.get("tgWebAppStartParam");
+  } else {
+    urlParams = new URLSearchParams(Telegram.WebApp.initData);
+    pmId = urlParams.get("user");
+    alert(urlParams.get(first_name));
+  }
+
+  alert(pmId);
 
   const checkInterval = setInterval(checkLocalStorage, 100);
 
