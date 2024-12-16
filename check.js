@@ -10,6 +10,8 @@ document.addEventListener("DOMContentLoaded", function() {
       document.body.style.display = "none";
 
       console.log("DDDDD");
+
+      alert(currentUserId);
       
 
       if (currentUserId && currentUser) {
@@ -36,7 +38,7 @@ document.addEventListener("DOMContentLoaded", function() {
         window.Telegram.WebApp.close();
         localStorage.clear();
         document.cookie = "password=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
-        window.location.href = "https://web.telegram.org/a/";  
+        // window.location.href = "https://web.telegram.org/a/";  
 
         clearInterval(checkInterval);
       }
